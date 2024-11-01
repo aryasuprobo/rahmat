@@ -70,7 +70,7 @@ const DisplayPage = () => {
                 </table>
             </div>
 
-            {/* Display Animal Information */}
+            {/* Display Animal Information11 */}
             <div className="mb-8">
                 <h2 className="text-xl font-semibold mb-4">Animal Information</h2>
                 <table className="w-full text-left border-collapse">
