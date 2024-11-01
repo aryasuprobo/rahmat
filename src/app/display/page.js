@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../firebaseConfig"; // Adjust the path to your Firebase config file
 import { collection, getDocs } from "firebase/firestore";
 
+
 const DisplayPage = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
