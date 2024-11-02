@@ -121,7 +121,7 @@ const InputPage = () => {
                         </div>
                     </div>
                     <br></br><br></br>
-                    {/* Animal Information */}
+                    {/* Animal Informations */}
                     <div>
                         <h1 className="text-xl font-bold mb-4">Animal Information</h1>
                         <div className="grid grid-cols-1 gap-4">
