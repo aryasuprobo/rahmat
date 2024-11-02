@@ -146,7 +146,7 @@ const InputPage = () => {
                         </div>
                     </div>
                     <br></br><br></br>
-                    {/* Physical Examination */}
+                    {/* Physical  */}
                     <div>
                         <h1 className="text-xl font-bold mb-4">Physical Examination</h1>
                         <div className="grid grid-cols-1 gap-4">
