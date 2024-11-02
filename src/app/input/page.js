@@ -68,7 +68,31 @@ const InputPage = () => {
     };
 
     return (
-        <div className=" mx-auto p-6 shadow-md rounded-lg bg-gradient-to-r from-blue-700 to-violet-700 italic">
+        <div className=" mx-auto p-6 shadow-md rounded-lg bg-gradient-to-r from-blue-700 to-fuchsia-700 italic">
+            {/* Header Component */}
+            <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg py-4 mb-8">
+                <div className="container mx-auto flex justify-between items-center px-4">
+                    <h1 className="text-4xl font-extrabold tracking-tight">
+                        <span className="text-yellow-300">🐾</span> Animal Health Record System
+                    </h1>
+                    <nav className="space-x-4">
+
+                        <button
+                            className="px-4 py-2 rounded-full bg-blue-800 hover:bg-blue-900 transition duration-300 ease-in-out text-lg font-medium shadow-md hover:shadow-lg focus:outline-none"
+                            onClick={() => router.push("/display")}
+                        >
+                            View All Data
+                        </button>
+                        <button
+                            className="px-4 py-2 rounded-full bg-blue-800 hover:bg-blue-900 transition duration-300 ease-in-out text-lg font-medium shadow-md hover:shadow-lg focus:outline-none"
+                            onClick={() => router.push("/contact")}
+                        >
+                            Contact Us
+                        </button>
+                    </nav>
+                </div>
+            </header>
+
             <h1 className="text-2xl font-bold text-center mb-6">Animal Data Input Form</h1>
             <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="max-w-2xl mx-auto">
@@ -164,15 +188,9 @@ const InputPage = () => {
                     <br></br>
 
                     <button type="submit" className="w-full bg-blue-700 hover:bg-blue-900 font-semibold py-2 rounded-md">Save</button>
-                    <button
-                        onClick={() => router.push("/display")}
-                        className="w-full mt-4 py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600"
-                    >
-                        View All Data
-                    </button>
+
                 </div>
             </form>
-            {/* Button to navigate to the display page */}
 
         </div>
 
