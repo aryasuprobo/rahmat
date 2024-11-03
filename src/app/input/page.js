@@ -120,9 +120,9 @@ const InputPage = () => {
 
 
     return (
-        <div className=" shadow-md rounded-lg bg-gray-800 italic flex flex-col min-h-screen">
+        <div className=" bg-gray-900 italic  ">
             {/* Header Component */}
-            <header className="fixed top-0 left-0 w-full z-50 bg-blue-500 text-white shadow-lg py-4 mb-8">
+            <header className="fixed top-0 left-0 w-full z-50 bg-blue-600 text-white shadow-lg py-4 mb-8">
                 <div className="container mx-auto flex justify-between items-center flex-wrap px-4 space-x-4">
                     <h1 className="font-extrabold text-xl sm:text-3xl truncate">
                         {/* <span className="text-yellow-300">🐾</span> Animal Health Record System */}
@@ -146,10 +146,10 @@ const InputPage = () => {
                 <br></br><br></br><br></br>
                 <h1 className="text-2xl font-bold text-center mb-6">Animal Data Input Form</h1>
                 <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="max-w-2xl mx-auto p-4">
+                    <div className="max-w-2xl mx-auto p-4 bg-contain  bg-gray-700 rounded-md">
                         {/* Client Information */}
-                        <div className="max-w-2xl mx-auto p-4">
-                            <h1 className="text-xl font-bold mb-4  text-white">Client Information</h1>
+                        <div className="max-w-2xl mx-auto p-4 ">
+                            <h1 className="text-xl font-bold mb-4 text-white">Client Information</h1>
                             <div className="grid grid-cols-1 gap-4">
 
                                 <label className="label-field  text-white">ID Klien</label>
@@ -171,35 +171,37 @@ const InputPage = () => {
                                 <input className="input-field rounded-md text-black" type="text" name="dvm" placeholder="" value={client.dvm} onChange={(e) => handleInputChange(e, setClient, client)} />
                             </div>
                         </div>
-                    </div>
-                    <br></br><br></br>
-                    {/* Animal Informations */}
-                    <div>
-                        <h1 className="text-xl font-bold mb-4">Animal Information</h1>
-                        <div className="grid grid-cols-1 gap-4">
-                            <label className="label-field">ID Hewan</label>
-                            <input className="input-field rounded-md text-black" type="text" name="id" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                            <label className="label-field">Nama</label>
-                            <input className="input-field rounded-md text-black" type="text" name="name" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                            <label className="label-field">Species</label>
-                            <input className="input-field rounded-md text-black" type="text" name="species" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                            <label className="label-field">Breed</label>
-                            <input className="input-field rounded-md text-black" type="text" name="breed" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                            <label className="label-field">Berat Badan</label>
-                            <input className="input-field rounded-md text-black" type="text" name="weight" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                            <label className="label-field">Umur</label>
-                            <input className="input-field rounded-md text-black" type="number" name="age" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                            <label className="label-field">Gender</label>
-                            <select className="input-field rounded-md text-black" name="gender" onChange={(e) => handleInputChange(e, setAnimal, animal)}>
-                                <option value="">Select Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
+
+                        <br></br><br></br>
+
+                        {/* Animal Informations */}
+                        <div className="max-w-2xl mx-auto p-4 ">
+                            <h1 className="text-xl font-bold mb-4 text-white">Animal Information</h1>
+                            <div className="grid grid-cols-1 gap-4">
+                                <label className="label-field text-white">ID Hewan</label>
+                                <input className="input-field rounded-md text-black" type="text" name="id" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                                <label className="label-field text-white">Nama</label>
+                                <input className="input-field rounded-md text-black" type="text" name="name" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                                <label className="label-field text-white">Species</label>
+                                <input className="input-field rounded-md text-black" type="text" name="species" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                                <label className="label-field text-white">Breed</label>
+                                <input className="input-field rounded-md text-black" type="text" name="breed" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                                <label className="label-field text-white">Berat Badan</label>
+                                <input className="input-field rounded-md text-black" type="text" name="weight" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                                <label className="label-field text-white">Umur</label>
+                                <input className="input-field rounded-md text-black" type="number" name="age" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                                <label className="label-field text-white">Gender</label>
+                                <select className="input-field rounded-md text-black" name="gender" onChange={(e) => handleInputChange(e, setAnimal, animal)}>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
                         </div>
                         <br></br><br></br>
                         {/* Physical  */}
 
-                        <div className="max-w-2xl mx-auto p-4">
+                        <div className="max-w-2xl mx-auto p-4 ">
                             <h1 className="text-xl font-bold mb-4 text-white">Physical Examination</h1>
                             <div className="grid grid-cols-1 gap-6">
                                 {physicalExamFields.map((field) => (
@@ -228,17 +230,22 @@ const InputPage = () => {
                                 ))}
                             </div>
                         </div>
-
                         <br></br>
 
-                        <button type="submit" className="w-full bg-gray-700 hover:bg-blue-500 font-semibold py-2 rounded-md hover:scale-105">Save</button>
+                        <button type="submit" className="w-full bg-blue-700 hover:bg-gray-800  font-semibold py-2 rounded-md ">Save</button>
+
 
                     </div>
-                    <Footer />
+
                 </form>
 
-            </div>
 
+
+
+
+
+            </div>
+            <Footer />
         </div>
 
     );
