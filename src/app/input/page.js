@@ -171,31 +171,30 @@ const InputPage = () => {
                                 <input className="input-field rounded-md text-black" type="text" name="dvm" placeholder="" value={client.dvm} onChange={(e) => handleInputChange(e, setClient, client)} />
                             </div>
                         </div>
-                        <br></br><br></br>
-                        {/* Animal Informations */}
-                        <div className="max-w-2xl mx-auto p-4">
-                            <h1 className="text-xl font-bold mb-4  text-white">Animal Information</h1>
-                            <div className="grid grid-cols-1 gap-4">
-                                <label className="label-field text-white">ID Hewan</label>
-                                <input className="input-field rounded-md text-black" type="text" name="id" placeholder="" value={animal.id} onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                                <label className="label-field text-white">Nama</label>
-                                <input className="input-field rounded-md text-black" type="text" name="name" placeholder="" value={animal.name} onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                                <label className="label-field text-white">Species</label>
-                                <input className="input-field rounded-md text-black" type="text" name="species" placeholder="" value={animal.species} onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                                <label className="label-field text-white">Breed</label>
-                                <input className="input-field rounded-md text-black" type="text" name="breed" placeholder="" value={animal.breed} onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                                <label className="label-field text-white">Berat Badan</label>
-                                <input className="input-field rounded-md text-black" type="text" name="weight" placeholder="" value={animal.weight} onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                                <label className="label-field text-white">Umur</label>
-                                <input className="input-field rounded-md text-black" type="number" name="age" placeholder="" value={animal.age} onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                                <label className="label-field text-white">Gender</label>
-                                <select className="input-field rounded-md text-black" name="gender" value={animal.gender} onChange={(e) => handleInputChange(e, setAnimal, animal)}>
-                                    <option value="">Select Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <input className="input-field rounded-md text-black" type="text" placeholder="" value={animal.gender} onChange={(e) => handleInputChange(e, setAnimal, animal)} />
-                                </select>
-                            </div>
+                    </div>
+                    <br></br><br></br>
+                    {/* Animal Informations */}
+                    <div>
+                        <h1 className="text-xl font-bold mb-4">Animal Information</h1>
+                        <div className="grid grid-cols-1 gap-4">
+                            <label className="label-field">ID Hewan</label>
+                            <input className="input-field rounded-md text-black" type="text" name="id" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                            <label className="label-field">Nama</label>
+                            <input className="input-field rounded-md text-black" type="text" name="name" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                            <label className="label-field">Species</label>
+                            <input className="input-field rounded-md text-black" type="text" name="species" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                            <label className="label-field">Breed</label>
+                            <input className="input-field rounded-md text-black" type="text" name="breed" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                            <label className="label-field">Berat Badan</label>
+                            <input className="input-field rounded-md text-black" type="text" name="weight" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                            <label className="label-field">Umur</label>
+                            <input className="input-field rounded-md text-black" type="number" name="age" placeholder="" onChange={(e) => handleInputChange(e, setAnimal, animal)} />
+                            <label className="label-field">Gender</label>
+                            <select className="input-field rounded-md text-black" name="gender" onChange={(e) => handleInputChange(e, setAnimal, animal)}>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
                         </div>
                         <br></br><br></br>
                         {/* Physical  */}
