@@ -232,7 +232,7 @@ const InputPage = () => {
                         </div>
                         <br></br>
 
-                        <button type="submit" className="w-full bg-blue-700 hover:bg-gray-800  font-semibold py-2 rounded-md ">Save</button>
+                        <button type="submit" className="w-full bg-blue-700 hover:bg-gray-800  font-semibold py-2 rounded-md " loading loadingText="Saving...">Save</button>
 
 
                     </div>
