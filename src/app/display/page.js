@@ -3,8 +3,13 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
+import Footer from "../components/Footer";
+
 
 const DisplayPage = () => {
+    const router = useRouter(); // Inisialisasi useRouter
+
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -44,22 +49,37 @@ const DisplayPage = () => {
     }
 
     return (
-        <div className="min-h-screen flex flex-col bg-gradient-to-r from-blue-700 to-fuchsia-700">
-            <header>
-                <nav className="bg-gray-800 text-white p-4">
-                    <h1 className="text-lg">My Navbar</h1>
-                </nav>
+        <div className="min-h-screen flex flex-col bg-stone-200	 italic   ">
+            <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg py-4">
+            <div className="container mx-auto flex justify-between items-center flex-wrap px-4 space-x-4">
+                    <h1 className="font-extrabold text-xl sm:text-3xl truncate">
+                        {/* <span className="text-yellow-300">🐾</span> Animal Health Record System */}
+                        <span class="box-decoration-clone  text-white px-2 ...">
+                            🐾 Animal Health Record System
+                        </span>
+                    </h1>
+                    <nav className="flex space-x-4 ml-auto">
+
+                        <button
+                            className="px-4 py-2 sm:text-lg  truncate rounded-full bg-gray-700  hover:bg-blue-100 transition duration-300 ease-in-out text-lg font-medium shadow-md hover:shadow-lg focus:outline-none hover:scale-105"
+                            onClick={() => router.push("/input")}
+                        >
+                            Input Data
+                        </button>
+                    </nav>
+                </div>
             </header>
-            <main className="flex-grow mx-auto p-6 shadow-md rounded-lg bg-white bg-opacity-90">
-                <h1 className="text-2xl font-bold text-center mb-6">Data Display</h1>
+            
+            <main className="flex-grow mx-auto p-6 shadow-md rounded-lg bg-gray-400 text-black bg-opacity-90 mt-24">
+            <h1 className="text-2xl font-bold text-center mb-6">Data Display</h1>
 
                 {/* Display Client Information */}
-                <div className="mb-8">
+                <div className="mb-8 ">
                     <h2 className="text-xl font-semibold mb-4">Client Information</h2>
                     <table className="w-full text-left border-collapse">
                         <thead>
-                            <tr className="bg-slate-500">
-                                <th className="border p-2">ID</th>
+                        <tr className="bg-slate-500">
+                            <th className="border p-2">ID</th>
                                 <th className="border p-2">Name</th>
                                 <th className="border p-2">Address</th>
                                 <th className="border p-2">Phone</th>
@@ -67,8 +87,8 @@ const DisplayPage = () => {
                                 <th className="border p-2">DVM</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {data.clients.map(client => (
+                        <tbody className="bg-white">
+                        {data.clients.map(client => (
                                 <tr key={`client-${client.id}`}>
                                     <td className="border p-2">{client.id}</td>
                                     <td className="border p-2">{client.name}</td>
@@ -97,8 +117,8 @@ const DisplayPage = () => {
                                 <th className="border p-2">Gender</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {data.animals.map(animal => (
+                        <tbody className="bg-white">
+                        {data.animals.map(animal => (
                                 <tr key={`animal-${animal.id}`}>
                                     <td className="border p-2">{animal.id}</td>
                                     <td className="border p-2">{animal.name}</td>
@@ -113,68 +133,62 @@ const DisplayPage = () => {
                     </table>
                 </div>
 
-                {/* Display Physical Examination Information */}
-                <div className="overflow-x-auto mb-8">
-                    <h2 className="text-xl font-semibold mb-4">Physical Examination</h2>
-                    <table className="w-full text-left border-collapse">
-                        <thead>
-                            <tr className="bg-slate-500">
-                                <th className="border p-2">Animal ID</th>
-                                <th className="border p-2">Temperature</th>
-                                <th className="border p-2">Appearance</th>
-                                <th className="border p-2">Eyes</th>
-                                <th className="border p-2">Ears</th>
-                                <th className="border p-2">Nose</th>
-                                <th className="border p-2">Mouth</th>
-                                <th className="border p-2">Skin & Hair</th>
-                                <th className="border p-2">Lymph Nodes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data.exams.map((exam, index) => (
-                                <React.Fragment key={`exam-${exam.id}-${index}`}>
-                                    <tr>
-                                        <td className="border p-2">{exam.animalId}</td>
-                                        <td className="border p-2">{exam.temperature}</td>
-                                        <td className="border p-2">{exam.appearance}</td>
-                                        <td className="border p-2">{exam.eyes}</td>
-                                        <td className="border p-2">{exam.ears}</td>
-                                        <td className="border p-2">{exam.nose}</td>
-                                        <td className="border p-2">{exam.mouth}</td>
-                                        <td className="border p-2">{exam.skinHair}</td>
-                                        <td className="border p-2">{exam.lymphNodes}</td>
-                                    </tr>
-                                    <tr key={`exam-additional-${exam.id}-${index}`}>
-                                        <td className="border p-2"></td>
-                                        <td className="border p-2">Mucosa</td>
-                                        <td className="border p-2">{exam.mucosa}</td>
-                                        <td className="border p-2">Abdomen</td>
-                                        <td className="border p-2">{exam.abdomen}</td>
-                                        <td className="border p-2">Thorax</td>
-                                        <td className="border p-2">{exam.thorax}</td>
-                                        <td className="border p-2">Gastro</td>
-                                        <td className="border p-2">{exam.gastro}</td>
-                                    </tr>
-                                    <tr key={`exam-extra-${exam.id}-${index}`}>
-                                        <td className="border p-2"></td>
-                                        <td className="border p-2">Respiration</td>
-                                        <td className="border p-2">{exam.respiration}</td>
-                                        <td className="border p-2">Bone & Muscle</td>
-                                        <td className="border p-2">{exam.boneMuscle}</td>
-                                        <td className="border p-2">Extremities</td>
-                                        <td className="border p-2">{exam.extremities}</td>
-                                        <td className="border p-2">Urogenital</td>
-                                        <td className="border p-2">{exam.urogenital}</td>
-                                    </tr>
-                                </React.Fragment>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+               {/* Display Physical Examination Information */}
+<div className="overflow-x-auto mb-8">
+    <h2 className="text-xl font-semibold mb-4">Physical Examination</h2>
+    <table className="min-w-full text-left border-collapse">
+        <thead>
+            <tr className="bg-slate-500">
+                <th className="border p-2 w-1/12">Suhu</th>
+                <th className="border p-2 w-1/12">Penampilan</th>
+                <th className="border p-2 w-1/12">Mata</th>
+                <th className="border p-2 w-1/12">Telinga</th>
+                <th className="border p-2 w-1/12">Hidung</th>
+                <th className="border p-2 w-1/12">Mulut</th>
+                <th className="border p-2 w-1/12">Kulit dan Rambut</th>
+                <th className="border p-2 w-1/12">Limfonodus</th>
+                <th className="border p-2 w-1/12">Mukosa</th>
+                <th className="border p-2 w-1/12">Abdomen</th>
+                <th className="border p-2 w-1/12">Thoraks</th>
+                <th className="border p-2 w-1/12">Gastro</th>
+                <th className="border p-2 w-1/12">Respirasi</th>
+                <th className="border p-2 w-1/12">Tulang dan Otot</th>
+                <th className="border p-2 w-1/12">Ekstremitas</th>
+                <th className="border p-2 w-1/12">Urogenital</th>
+            </tr>
+        </thead>
+        <tbody className="bg-white">
+            {data.exams.map((exam, index) => (
+                <tr key={`exam-${exam.id}-${index}`}>
+                    <td className="border p-2">{exam.temperature}</td>
+                    <td className="border p-2">{exam.appearance}</td>
+                    <td className="border p-2">{exam.eyes}</td>
+                    <td className="border p-2">{exam.ears}</td>
+                    <td className="border p-2">{exam.nose}</td>
+                    <td className="border p-2">{exam.mouth}</td>
+                    <td className="border p-2">{exam.skinHair}</td>
+                    <td className="border p-2">{exam.lymphNodes}</td>
+                    <td className="border p-2">{exam.mucosa}</td>
+                    <td className="border p-2">{exam.abdomen}</td>
+                    <td className="border p-2">{exam.thorax}</td>
+                    <td className="border p-2">{exam.gastro}</td>
+                    <td className="border p-2">{exam.respiration}</td>
+                    <td className="border p-2">{exam.boneMuscle}</td>
+                    <td className="border p-2">{exam.extremities}</td>
+                    <td className="border p-2">{exam.urogenital}</td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
+</div>
+
+
             </main>
-            <footer className="bg-gray-800 text-white p-4">
-                <p className="text-center">My Footer</p>
+            <footer className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 text-center mt-20">
+                <p>© 2024 Klinik Hewan. Hak Cipta Dilindungi.</p>
+                <p>Dibuat dengan Next.js dan Firebase | Desain oleh Pulau ES</p>
             </footer>
+
         </div>
     );
 };
