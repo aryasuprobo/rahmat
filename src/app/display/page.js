@@ -51,7 +51,7 @@ const DisplayPage = () => {
     return (
         <div className="min-h-screen flex flex-col bg-stone-200	 italic   ">
             <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg py-4">
-            <div className="container mx-auto flex justify-between items-center flex-wrap px-4 space-x-4">
+                <div className="container mx-auto flex justify-between items-center flex-wrap px-4 space-x-4">
                     <h1 className="font-extrabold text-xl sm:text-3xl truncate">
                         {/* <span className="text-yellow-300">🐾</span> Animal Health Record System */}
                         <span class="box-decoration-clone  text-white px-2 ...">
@@ -69,17 +69,17 @@ const DisplayPage = () => {
                     </nav>
                 </div>
             </header>
-            
+
             <main className="flex-grow mx-auto p-6 shadow-md rounded-lg bg-gray-400 text-black bg-opacity-90 mt-24">
-            <h1 className="text-2xl font-bold text-center mb-6">Data Display</h1>
+                <h1 className="text-2xl font-bold text-center mb-6">Data Display</h1>
 
                 {/* Display Client Information */}
                 <div className="mb-8 ">
                     <h2 className="text-xl font-semibold mb-4">Client Information</h2>
                     <table className="w-full text-left border-collapse">
                         <thead>
-                        <tr className="bg-slate-500">
-                            <th className="border p-2">ID</th>
+                            <tr className="bg-slate-500">
+                                <th className="border p-2">ID</th>
                                 <th className="border p-2">Name</th>
                                 <th className="border p-2">Address</th>
                                 <th className="border p-2">Phone</th>
@@ -88,7 +88,7 @@ const DisplayPage = () => {
                             </tr>
                         </thead>
                         <tbody className="bg-white">
-                        {data.clients.map(client => (
+                            {data.clients.map(client => (
                                 <tr key={`client-${client.id}`}>
                                     <td className="border p-2">{client.id}</td>
                                     <td className="border p-2">{client.name}</td>
@@ -118,7 +118,7 @@ const DisplayPage = () => {
                             </tr>
                         </thead>
                         <tbody className="bg-white">
-                        {data.animals.map(animal => (
+                            {data.animals.map(animal => (
                                 <tr key={`animal-${animal.id}`}>
                                     <td className="border p-2">{animal.id}</td>
                                     <td className="border p-2">{animal.name}</td>
@@ -133,54 +133,54 @@ const DisplayPage = () => {
                     </table>
                 </div>
 
-               {/* Display Physical Examination Information */}
-<div className="overflow-x-auto mb-8">
-    <h2 className="text-xl font-semibold mb-4">Physical Examination</h2>
-    <table className="min-w-full text-left border-collapse">
-        <thead>
-            <tr className="bg-slate-500">
-                <th className="border p-2 w-1/12">Suhu</th>
-                <th className="border p-2 w-1/12">Penampilan</th>
-                <th className="border p-2 w-1/12">Mata</th>
-                <th className="border p-2 w-1/12">Telinga</th>
-                <th className="border p-2 w-1/12">Hidung</th>
-                <th className="border p-2 w-1/12">Mulut</th>
-                <th className="border p-2 w-1/12">Kulit dan Rambut</th>
-                <th className="border p-2 w-1/12">Limfonodus</th>
-                <th className="border p-2 w-1/12">Mukosa</th>
-                <th className="border p-2 w-1/12">Abdomen</th>
-                <th className="border p-2 w-1/12">Thoraks</th>
-                <th className="border p-2 w-1/12">Gastro</th>
-                <th className="border p-2 w-1/12">Respirasi</th>
-                <th className="border p-2 w-1/12">Tulang dan Otot</th>
-                <th className="border p-2 w-1/12">Ekstremitas</th>
-                <th className="border p-2 w-1/12">Urogenital</th>
-            </tr>
-        </thead>
-        <tbody className="bg-white">
-            {data.exams.map((exam, index) => (
-                <tr key={`exam-${exam.id}-${index}`}>
-                    <td className="border p-2">{exam.temperature}</td>
-                    <td className="border p-2">{exam.appearance}</td>
-                    <td className="border p-2">{exam.eyes}</td>
-                    <td className="border p-2">{exam.ears}</td>
-                    <td className="border p-2">{exam.nose}</td>
-                    <td className="border p-2">{exam.mouth}</td>
-                    <td className="border p-2">{exam.skinHair}</td>
-                    <td className="border p-2">{exam.lymphNodes}</td>
-                    <td className="border p-2">{exam.mucosa}</td>
-                    <td className="border p-2">{exam.abdomen}</td>
-                    <td className="border p-2">{exam.thorax}</td>
-                    <td className="border p-2">{exam.gastro}</td>
-                    <td className="border p-2">{exam.respiration}</td>
-                    <td className="border p-2">{exam.boneMuscle}</td>
-                    <td className="border p-2">{exam.extremities}</td>
-                    <td className="border p-2">{exam.urogenital}</td>
-                </tr>
-            ))}
-        </tbody>
-    </table>
-</div>
+                {/* Display Physical Examination Information */}
+                <div className="overflow-x-auto mb-8">
+                    <h2 className="text-xl font-semibold mb-4">Physical Examination</h2>
+                    <table className="min-w-full text-left border-collapse">
+                        <thead>
+                            <tr className="bg-slate-500">
+                                <th className="border p-2 w-1/12">Suhu</th>
+                                <th className="border p-2 w-1/12">Penampilan</th>
+                                <th className="border p-2 w-1/12">Mata</th>
+                                <th className="border p-2 w-1/12">Telinga</th>
+                                <th className="border p-2 w-1/12">Hidung</th>
+                                <th className="border p-2 w-1/12">Mulut</th>
+                                <th className="border p-2 w-1/12">Kulit dan Rambut</th>
+                                <th className="border p-2 w-1/12">Limfonodus</th>
+                                <th className="border p-2 w-1/12">Mukosa</th>
+                                <th className="border p-2 w-1/12">Abdomen</th>
+                                <th className="border p-2 w-1/12">Thoraks</th>
+                                <th className="border p-2 w-1/12">Gastro</th>
+                                <th className="border p-2 w-1/12">Respirasi</th>
+                                <th className="border p-2 w-1/12">Tulang dan Otot</th>
+                                <th className="border p-2 w-1/12">Ekstremitas</th>
+                                <th className="border p-2 w-1/12">Urogenital</th>
+                            </tr>
+                        </thead>
+                        <tbody className="bg-white">
+                            {data.exams.map((exam, index) => (
+                                <tr key={`exam-${exam.id}-${index}`}>
+                                    <td className="border p-2">{exam.temperature}</td>
+                                    <td className="border p-2">{exam.appearance}</td>
+                                    <td className="border p-2">{exam.eyes}</td>
+                                    <td className="border p-2">{exam.ears}</td>
+                                    <td className="border p-2">{exam.nose}</td>
+                                    <td className="border p-2">{exam.mouth}</td>
+                                    <td className="border p-2">{exam.skinHair}</td>
+                                    <td className="border p-2">{exam.lymphNodes}</td>
+                                    <td className="border p-2">{exam.mucosa}</td>
+                                    <td className="border p-2">{exam.abdomen}</td>
+                                    <td className="border p-2">{exam.thorax}</td>
+                                    <td className="border p-2">{exam.gastro}</td>
+                                    <td className="border p-2">{exam.respiration}</td>
+                                    <td className="border p-2">{exam.boneMuscle}</td>
+                                    <td className="border p-2">{exam.extremities}</td>
+                                    <td className="border p-2">{exam.urogenital}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
 
 
             </main>
